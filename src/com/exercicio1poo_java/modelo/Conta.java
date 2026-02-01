@@ -7,17 +7,19 @@ public class Conta {
 	private Double Saldo; 
 	
 	public Conta(String n, String t) {
-		Numero = n; 
+		Numero = validarNumero(n); 
 		Titular = validarTitular(t); 
 		Saldo = 0.0; 
 	}
 	
-	public void Deposito(double quantia) {
-		if(quantia < 0.0) {
-			System.out.println("Depósito não pode ser menor que $0.00");
+	private String validarNumero(String n) {
+		String numero = ""; 
+		if(n != null && n.length() >= 4) {
+			numero = n; 
 		}else {
-			Saldo += quantia; 
+			numero = "0000";
 		}
+		return numero;
 	}
 	
 	private String validarTitular(String t) {
@@ -26,17 +28,25 @@ public class Conta {
 			titular = t;
 		}
 		else {
-			titular = "N/A";
+			titular = "N/D";
 		}
 		return titular;
 	}
 	
 	public void Saque(double quantia) {
-		if(quantia < 0.0) {
-			System.out.println("Saque não pode ser menor que $0.00");
+		if(quantia <= 0.0) {
+			System.out.println("Saque não pode ser menor ou igual a $0.00");
 		}else {
 			quantia += 5.0;
 			Saldo -= quantia; 
+		}
+	}
+	
+	public void Deposito(double quantia) {
+		if(quantia <= 0.0) {
+			System.out.println("Depósito não pode ser menor ou igual a $0.00");
+		}else {
+			Saldo += quantia; 
 		}
 	}
 

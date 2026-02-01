@@ -2,9 +2,9 @@ package com.exercicio1poo_java.modelo;
 
 public class Conta {
 	
-	public String Numero;
-	public String Titular; 
-	public Double Saldo; 
+	private String Numero;
+	private String Titular; 
+	private Double Saldo; 
 	
 	public Conta(String n, String t) {
 		Numero = n; 

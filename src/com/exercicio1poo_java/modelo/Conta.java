@@ -8,7 +8,7 @@ public class Conta {
 	
 	public Conta(String n, String t) {
 		Numero = n; 
-		Titular = t; 
+		Titular = validarTitular(t); 
 		Saldo = 0.0; 
 	}
 	
@@ -18,6 +18,17 @@ public class Conta {
 		}else {
 			Saldo += quantia; 
 		}
+	}
+	
+	private String validarTitular(String t) {
+		String titular = "";
+		if (t != null && t.length() > 1) {
+			titular = t;
+		}
+		else {
+			titular = "N/A";
+		}
+		return titular;
 	}
 	
 	public void Saque(double quantia) {

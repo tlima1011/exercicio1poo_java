@@ -4,12 +4,11 @@ public class Conta {
 	
 	private String Numero;
 	private String Titular; 
-	private Double Saldo; 
+	private Double Saldo = 0.0; 
 	
 	public Conta(String n, String t) {
 		Numero = validarNumero(n); 
 		Titular = validarTitular(t); 
-		Saldo = 0.0; 
 	}
 	
 	private String validarNumero(String n) {
@@ -37,8 +36,7 @@ public class Conta {
 		if(quantia <= 0.0) {
 			System.out.println("Saque não pode ser menor ou igual a $0.00");
 		}else {
-			quantia += 5.0;
-			Saldo -= quantia; 
+			Saldo -= quantia + 5.00; 
 		}
 	}
 	

@@ -28,19 +28,12 @@ public class ContaBancaria {
 	}
 	
 	private String validarTitular(String t) {
-		String titular = "";
-		if (t != null && t.length() > 5) {
-			titular = t;
-		}
-		else {
-			titular = "N/D";
-		}
-		return titular;
+		return (t != null && t.length() > 5) ? t : "N/D"; 
 	}
 	
 	public void Saque(double quantia) {
-		if(quantia <= 0.0) {
-			System.out.println("Saque não pode ser menor ou igual a $0.00");
+		if(quantia <= 0.0 && quantia > Saldo) {
+			System.out.println("Saque não pode ser menor ou igual a $0.00 ou Saldo Disponível Insuficiente");
 		}else {
 			Saldo -= quantia + 5.00; 
 		}

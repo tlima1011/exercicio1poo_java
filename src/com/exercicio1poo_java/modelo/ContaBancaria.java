@@ -15,16 +15,9 @@ public class ContaBancaria {
 		this(n, t); 
 		Deposito(DepositoInicial);
 	}
-	
-	
+		
 	private String validarNumero(String n) {
-		String numero = ""; 
-		if(n != null && n.length() >= 4) {
-			numero = n; 
-		}else {
-			numero = "0000";
-		}
-		return numero;
+		return (n != null && n.length() >= 4) ? n : "0000";
 	}
 	
 	private String validarTitular(String t) {

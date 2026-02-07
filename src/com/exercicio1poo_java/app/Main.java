@@ -3,7 +3,7 @@ package com.exercicio1poo_java.app;
 import java.util.Locale;
 import java.util.Scanner;
 
-import com.exercicio1poo_java.modelo.Conta;
+import com.exercicio1poo_java.modelo.ContaBancaria;
 
 public class Main {
 	
@@ -22,7 +22,7 @@ public class Main {
 		System.out.print("Haverá depósito inicial (s/n)? "); 
 		char resp = ler.nextLine().charAt(0); 
 		
-		Conta c = new Conta(n,t);
+		ContaBancaria c = new ContaBancaria(n,t);
 		
 		if(resp == 's' || resp == 'S') {
 			System.out.print("\nEntre o valor de depósito inicial: ");

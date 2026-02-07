@@ -1,15 +1,21 @@
 package com.exercicio1poo_java.modelo;
 
-public class Conta {
+public class ContaBancaria {
 	
 	private String Numero;
 	private String Titular; 
 	private Double Saldo = 0.0; 
 	
-	public Conta(String n, String t) {
+	public ContaBancaria(String n, String t) {
 		Numero = validarNumero(n); 
 		Titular = validarTitular(t); 
 	}
+	
+	public ContaBancaria(String n, String t, double DepositoInicial) {
+		this(n, t); 
+		Deposito(DepositoInicial);
+	}
+	
 	
 	private String validarNumero(String n) {
 		String numero = ""; 

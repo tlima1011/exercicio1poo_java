@@ -6,6 +6,10 @@ public class ContaBancaria {
 	private String Titular; 
 	private Double Saldo = 0.0; 
 	
+	public ContaBancaria() {
+		
+	}
+	
 	public ContaBancaria(String n, String t) {
 		Numero = validarNumero(n); 
 		Titular = validarTitular(t); 
@@ -47,6 +51,10 @@ public class ContaBancaria {
 			c1.Saque(quantia);
 			c2.Deposito(quantia);
 		}
+	}
+	
+	public String mostrarTitular() {
+		return Titular; 
 	}
 
 	@Override

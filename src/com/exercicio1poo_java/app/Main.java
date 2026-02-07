@@ -22,38 +22,57 @@ public class Main {
 		System.out.print("Haverá depósito inicial (s/n)? "); 
 		char resp = ler.nextLine().charAt(0); 
 		
-		ContaBancaria c;
+		ContaBancaria c1;
 		
 		if(resp == 's' || resp == 'S') {
 			System.out.print("\nEntre o valor de depósito inicial: ");
 			quantia = ler.nextDouble(); 
-			c= new ContaBancaria(n, t, quantia); 
+			c1= new ContaBancaria(n, t, quantia); 
 		}
 		else {
-			c = new ContaBancaria(n,t); 
+			c1 = new ContaBancaria(n,t); 
 		}
 		
 		System.out.println("Dados da Conta"); 
-		System.out.println(c); 
+		System.out.println(c1); 
 		
 		System.out.print("Entre um valor para depósito: ");
 		quantia = ler.nextDouble();
-		c.Deposito(quantia); 
+		c1.Deposito(quantia); 
 		
 		System.out.println("\nDados da conta atualizados: "); 
-		System.out.println(c);
+		System.out.println(c1);
 		
 		System.out.print("Entre um valor para saque: "); 
-		quantia = ler.nextDouble(); 
-		c.Saque(quantia); 
+		quantia = ler.nextDouble();
+		ler.nextLine(); 
+		c1.Saque(quantia); 
 		
 		System.out.println("\nDados da conta atualizados: "); 
-		System.out.println(c);
+		System.out.println(c1);
 		
+		System.out.println("Criação de uma nova conta: ");
+		System.out.print("Entre o número da conta: "); 
+		n = ler.nextLine(); 
+		System.out.print("Entre o titular da conta: "); 
+		t = ler.nextLine();
 		
+		ContaBancaria c2 = new ContaBancaria(n,t);
+		System.out.println(c2);
 		
+		System.out.printf("Informe quantia de transferência de %s para %s ", c1.mostrarTitular(), c2.mostrarTitular()); 
+		quantia = ler.nextDouble(); 
 		
+		ContaBancaria c = new ContaBancaria(); 
 		
+		c.Transfere(c1, c2, quantia); 
+		System.out.println(); 
+		System.out.println("-----------------------------------------");
+		System.out.println(c1); 
+		System.out.println("-----------------------------------------");
+		System.out.println(c2);  
+		System.out.println("-----------------------------------------");
+	
 		ler.close();
 	}
 

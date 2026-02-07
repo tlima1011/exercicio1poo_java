@@ -10,6 +10,12 @@ public class ContaBancaria {
 		
 	}
 	
+	public ContaBancaria(String t) {
+		Titular = validarTitular(t); 
+		Numero = validarNumero("0");
+		Deposito(0.0); 
+	}
+	
 	public ContaBancaria(String n, String t) {
 		Numero = validarNumero(n); 
 		Titular = validarTitular(t); 

@@ -29,7 +29,7 @@ public class ContaBancaria {
 	
 	private String validarTitular(String t) {
 		String titular = "";
-		if (t != null && t.length() > 1) {
+		if (t != null && t.length() > 5) {
 			titular = t;
 		}
 		else {

@@ -22,12 +22,15 @@ public class Main {
 		System.out.print("Haverá depósito inicial (s/n)? "); 
 		char resp = ler.nextLine().charAt(0); 
 		
-		ContaBancaria c = new ContaBancaria(n,t);
+		ContaBancaria c;
 		
 		if(resp == 's' || resp == 'S') {
 			System.out.print("\nEntre o valor de depósito inicial: ");
 			quantia = ler.nextDouble(); 
-			c.Deposito(quantia); 
+			c= new ContaBancaria(n, t, quantia); 
+		}
+		else {
+			c = new ContaBancaria(n,t); 
 		}
 		
 		System.out.println("Dados da Conta"); 

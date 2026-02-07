@@ -39,6 +39,15 @@ public class ContaBancaria {
 			Saldo += quantia; 
 		}
 	}
+	
+	public void Transfere(ContaBancaria c1, ContaBancaria c2, double quantia) { 
+		if(quantia <= 0) {
+			System.out.println("Valor de quantia inválido $ 0.00");
+		}else {
+			c1.Saque(quantia);
+			c2.Deposito(quantia);
+		}
+	}
 
 	@Override
 	public String toString() {
